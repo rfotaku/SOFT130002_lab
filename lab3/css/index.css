@@ -1,0 +1,38 @@
+a:link {color : #FFE211;}
+a:visited {color : #66CCFF;}
+a:hover {color : #39C5BB;}
+a:active {color : #FFA500;}
+
+h3 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#user {float: right;}
+
+#content {
+    background-color: azure;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+#side {
+    width:50px;
+    color: #66CCFF;
+    line-height: 200%;
+    font-weight: bold;
+    position: fixed;
+    top: 100px;
+    right: 0;
+}
+
+article {
+    border-width: 1px;
+    border-color:#39C5BB;;
+    border-style: dashed;
+    margin: 20px 10px;
+}
+
+li {
+    margin-top:10px;
+}
