@@ -17,4 +17,5 @@
 ## 第六题，map的使用。  
 遍历数组，将差值作为key，下标作为value，先查找key-value对是否存在，若存在则取出value，与当前下标成对存入结果数组中；否则将key-value对存入map中。  
   
-  
+![github](./github.png)  
+![cmd](./cmd.png)
