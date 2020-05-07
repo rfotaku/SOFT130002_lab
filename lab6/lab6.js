@@ -160,6 +160,25 @@ function twoSum(nums, target) {
     ⑤str为字符串。
 */
 function lengthOfLongestSubstring(str) {
+    let index = 0;
+    let max = 0;
+    let map = new Map();
+    for(let i = 0;i<str.length;i++){
+        if(map.has(str[i])){
+            let temp = i - index;
+            if(temp > max)
+                max = temp;
+            index = i;
+            map.clear();
+            map.set(str[i],index)
+        }
+        else {
+            map.set(str[i],i);
+        }
+    }
+    let last = str.length - index;
+    if(last > max) max = last;
+    console.log(max);
 }
 
 /*
@@ -182,16 +201,19 @@ function DevelopingCountry() {
     }
 }
 
-function PoorCountry() {
-    PoorCountry.prototype = new Country();
-    PoorCountry.prototype.saySad = function () {
-        console.log("I am a sad poor country.");
-    }
+function PoorCountry() {}
+PoorCountry.prototype = new Country();
+PoorCountry.prototype.saySad = function () {
+    console.log("I am a sad poor country.");
 }
+
 function DevelopedCountry() {
-    return Object.create((new Country()),{sayHappy:function () {
-            console.log("I am a Happy developed country.");
-        }})
+    Country.call(this);
+}
+DevelopedCountry.prototype = Object.create(Country.prototype);
+DevelopedCountry.prototype.constructor = DevelopedCountry;
+DevelopedCountry.prototype.sayHappy = function () {
+    console.log("I am a Happy developed country.");
 }
 
 function test(){
@@ -200,6 +222,13 @@ function test(){
     testKeyBoard("7_This_is_a_test","_hs_s_a_es");
     testSpecialReverse("  hello  world!  ");
     twoSum([1,2,3,4,6,7,8,9],10);
+    lengthOfLongestSubstring("abcddddabcdefghi");
+    let a = new DevelopingCountry();
+    let b = new PoorCountry();
+    let c = new DevelopedCountry();
+    a.sayHi();
+    b.saySad();
+    c.sayHappy();
     testTime();
 }
 test();

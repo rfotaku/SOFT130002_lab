@@ -17,5 +17,9 @@
 ## 第六题，map的使用。  
 遍历数组，将差值作为key，下标作为value，先查找key-value对是否存在，若存在则取出value，与当前下标成对存入结果数组中；否则将key-value对存入map中。  
   
+## 第七题，最长子串。  
+遍历字符串，如果当前字符在map中不存在，则加入map中，若存在，则记录当前的index，length（函数中用temp表示）并比较决定是否更新max（if temp > max），然后，使用clear将map重置，并将当前的字符加入map中【即遇到重复的字符就重置map进行记录】  
+  
+## 第八题，继承。
 ![github](./github.png)  
 ![cmd](./cmd.png)
